@@ -35,6 +35,24 @@ class InMemoryFoodRepository implements FoodRepository
         return array_values($this->foods);
     }
 
+
+    public function findByDesc($desc): array
+    {
+        $allfoods = $this->foods['food'];
+        $foods = [];
+        $result = [];
+        $result["query"] = $desc['desc'];
+       
+        foreach ($allfoods as $key => $food){
+            //if($desc['desc'] == $food['desc']){
+            if(strpos (strtoupper($food['desc']),strtoupper($desc['desc']))){
+                $foods[] = $food;
+            }
+        }   
+        $result["foods"] = $foods;
+        return ($result);
+    }
+
     /**
      * {@inheritdoc}
      */

@@ -24,6 +24,5 @@ return function (App $app) {
 
     $app->group('/food', function (Group $group) {
         $group->get('', ListFoodsAction::class);
-        
     });
 };

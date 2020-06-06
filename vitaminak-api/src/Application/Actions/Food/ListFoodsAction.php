@@ -12,8 +12,15 @@ class ListFoodsAction extends FoodAction
      */
     protected function action(): Response
     {
-        $foods = $this->foodRepository->findAll();
-
+        
+        if($this->request->getQueryParams("desc")){
+            $desc = $this->request->getQueryParams("desc");
+            
+            $foods = $this->foodRepository->findByDesc($desc);
+        }else{
+            $foods = $this->foodRepository->findAll();
+        }
+        
         $this->logger->info("Foods list was viewed.");
 
         return $this->respondWithData($foods);

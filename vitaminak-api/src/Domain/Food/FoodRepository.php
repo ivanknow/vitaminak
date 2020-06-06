@@ -10,6 +10,12 @@ interface FoodRepository
      */
     public function findAll(): array;
 
+
+    /**
+     * @return Food[]
+     */
+    public function findByDesc($desc): array;
+
     /**
      * @param int $id
      * @return Food
