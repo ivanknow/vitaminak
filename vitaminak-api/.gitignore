@@ -1,6 +1,8 @@
 .idea/
 /coverage/
 /vendor/
+/dist/
+/node_modules/
 /logs/*
 !/logs/README.md
 ../composer.phar
