@@ -42,7 +42,6 @@ export default {
           err => console.log()
         );
 
-      alert(url);
     }
   }
 };
